@@ -1,6 +1,5 @@
-
-
 import 'package:flutter/material.dart';
+import 'package:online_exam_app/features/splash/presentaion/views/widgets/splash_page_body.dart';
 
 class SplashPage extends StatelessWidget {
   const SplashPage({super.key});
@@ -8,9 +7,7 @@ class SplashPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Center(
-        child: Text('Splash Page'),
-      ),
+      body: SplashPageBody(),
     );
   }
 }
