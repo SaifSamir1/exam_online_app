@@ -1,5 +1,6 @@
 
 import 'package:go_router/go_router.dart';
+import 'package:online_exam_app/features/create_the_exam/presentaion/views/create_exam_page.dart';
 import 'package:online_exam_app/features/splash/presentaion/views/splash_page.dart';
 
 import '../../features/authintication/presentaion/views/student_login.dart';
@@ -9,6 +10,7 @@ abstract class AppRouter {
   static  const kStudentAuth = '/kStudentAuth';
   static const kTeacherAuth = '/kTeacherAuth';
   static const kSplashView = '/kSplashView';
+  static const kCreateExamPage = '/kCreateExamPage';
 
   static final router = GoRouter(
     routes: [
@@ -22,8 +24,12 @@ abstract class AppRouter {
         builder: (context, state) => const SplashPage(),
       ),
       GoRoute(
-        path:'/',
+        path:kTeacherAuth,
         builder: (context, state) => const TeacherLogin(),
+      ),
+      GoRoute(
+        path:'/',
+        builder: (context, state) => const CreateExamPage(),
       ),
     ],
   );
