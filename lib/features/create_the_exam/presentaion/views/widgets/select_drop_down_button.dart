@@ -7,13 +7,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../core/utils/constant.dart';
-import '../../manger/question_cubit.dart';
+import '../../manger/question_cubit/question_cubit.dart';
 
 class SelectDayDropDownButton extends StatelessWidget {
   const SelectDayDropDownButton({
     super.key, required this.index,
   });
   final int index;
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<QuestionCubit, QuestionState>(
@@ -45,11 +46,10 @@ class SelectDayDropDownButton extends StatelessWidget {
             )
                 .toList(),
             onChanged: (String? value) {
-
               BlocProvider.of<QuestionCubit>(context)
                   .changeDropdownButton( value , index);
-              log(BlocProvider.of<QuestionCubit>(context).questionsType[index]);
 
+              log(BlocProvider.of<QuestionCubit>(context).questionsType[index]);
             },
             value: BlocProvider.of<QuestionCubit>(context).questionsType[index],
           ),

@@ -1,8 +1,7 @@
-import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../manger/question_cubit.dart';
+import '../../manger/question_cubit/question_cubit.dart';
 
 class QuestionOptions extends StatelessWidget {
   const QuestionOptions({
@@ -29,23 +28,22 @@ class QuestionOptions extends StatelessWidget {
                 children: [
                   Expanded(
                     child: TextFormField(
+                      controller:BlocProvider.of<QuestionCubit>(context).allOptionsController[questionIndex][index] ,
                       decoration:
                           InputDecoration(hintText: 'Option ${index + 1}'),
-                      onChanged: (value) {
-                        BlocProvider.of<QuestionCubit>(context).options.insert(index, value);
-                        log(value.toString());
-                        log(index.toString());
-                        log(questionIndex.toString());
-                      },
                     ),
                   ),
                   Checkbox(
-                    value: BlocProvider.of<QuestionCubit>(context).checkBoxValuesForAllQuestions[questionIndex][index],
+                    value: BlocProvider.of<QuestionCubit>(context)
+                        .checkBoxValuesForAllQuestions[questionIndex][index],
                     onChanged: (value) {
                       BlocProvider.of<QuestionCubit>(context)
-                          .changeCheckBoxValue(value!, index,questionIndex);
+                          .changeCheckBoxValue(value!, index, questionIndex);
                       // this is the correct answer
-                      log(BlocProvider.of<QuestionCubit>(context).options[index]);
+                      BlocProvider.of<QuestionCubit>(context).storeAllAnswers(
+                          BlocProvider.of<QuestionCubit>(context)
+                              .allOptionsController[questionIndex][index].text,
+                          questionIndex);
                     },
                   ),
                 ],
@@ -57,5 +55,3 @@ class QuestionOptions extends StatelessWidget {
     );
   }
 }
-
-

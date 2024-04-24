@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "365673866395",
+    "project_id": "onlain-exam",
+    "storage_bucket": "onlain-exam.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:365673866395:android:3332f888e6be4510b7123e",
+        "android_client_info": {
+          "package_name": "com.example.online_exam_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArEfr79M2gVQhhoXa58t7Y9Rww8qhgW1w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

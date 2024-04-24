@@ -1,6 +1,8 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:online_exam_app/core/utils/app_router.dart';
 
 import '../../../../../core/utils/app_style.dart';
 import '../../../../../core/widgets/custom_text_button.dart';
@@ -35,7 +37,9 @@ class SeeStudentsGrades extends StatelessWidget {
           child: CustomTextButton(
             color: Colors.brown,
             text: 'Go ',
-            function: () {},
+            function: () {
+              GoRouter.of(context).push(AppRouter.kViewExamResults);
+            },
             width:50,
             height: 45,
           ),

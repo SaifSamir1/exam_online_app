@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:online_exam_app/features/authintication/presentaion/views/widgets/student_login_body.dart';
 
 import '../../../../core/utils/constant.dart';
@@ -14,7 +15,7 @@ class StudentLogin extends StatelessWidget {
       appBar: AppBar(
         leading: BackButton(
           onPressed: (){
-
+            GoRouter.of(context).pop();
           },
           color: defaultColor,
         ),

@@ -13,6 +13,7 @@ abstract class AppStyles {
     return TextStyle(
       fontSize: getResponsiveFontSize(context, fontSize: 16),
       fontWeight: FontWeight.w700,
+      color: Colors.white
     );
   }
 
@@ -64,6 +65,13 @@ abstract class AppStyles {
       fontSize: getResponsiveFontSize(context, fontSize: 24),
       fontWeight: FontWeight.w600,
       color: textColor ?? defaultColor
+    );
+  }
+  static TextStyle styleSemiBold22(BuildContext context,[Color? textColor]) {
+    return TextStyle(
+        fontSize: getResponsiveFontSize(context, fontSize: 22),
+        fontWeight: FontWeight.w600,
+        color: textColor ?? defaultColor
     );
   }
 
